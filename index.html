@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background-color: #f0f0f0; */
+      background-image: url(https://cdn.pixabay.com/photo/2021/01/01/06/47/watermelon-5877895_1280.png);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: transparent;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 2px 3px 20px black;
+      padding: 150px;     
+      color: rgb(255, 166, 0);  
+      /* font-size: 36px; */
+    }
+
+    button {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+
+    .b1{
+        padding: 150px;
+        color: rgb(0, 0, 0);
+        box-shadow: 2px 3px 4px rgb(8, 8, 8);
+        text-shadow: 2px 3px 2px rgb(255, 255, 255);
+    }
+
+
+    #p2{
+        font-size: 45px;
+        font-weight: 900;
+        
+
+    }
+  </style>
+</head>
+<body>
+  <div id="root" class="container b1"></div>
+
+  <!-- Load React and ReactDOM libraries -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+  <!-- Load Babel standalone for JSX transpilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Your React component script -->
+  <script type="text/babel">
+    const { useState } = React;
+
+    const CounterButton = () => {
+      const [count, setCount] = useState(27);
+
+      const incrementCounter = () => {
+        setCount(count + 1);
+      };
+
+      return (
+        <div>
+          <button onClick={incrementCounter}>Increment Counter</button>
+          <p id="p2">Counter value: {count}</p>
+        </div>
+      );
+    };
+
+    ReactDOM.render(<CounterButton />, document.getElementById('root'));
+  </script>
+</body>
+</html>
